@@ -157,7 +157,11 @@ Authored 2026-09-04 with Claude Code for PeerIslands; synthetic data only; no re
 CPT content; service codes are invented `SVC-` codes, diagnosis codes are invented `DX-` codes,
 provider NPIs start with `99`.
 
-Last smoke: not yet run.
+Last smoke: 2026-09-04, `protean:code-insights` 0.1.0 (Claude Code plugin), standard depth, full scope,
+against commit `5485dc6`: `overview.md` listed the five layers, `components.json` classified
+`PKG_CLAIMS` under data, all 47 tables were catalogued, all 20 smells above were surfaced, and 40 of
+40 sampled `path:line` citations resolved. No PL/SQL hint pack existed yet; the package was placed
+under data by the generic "raw SQL / DDL" rule.
 
 ## License
 
