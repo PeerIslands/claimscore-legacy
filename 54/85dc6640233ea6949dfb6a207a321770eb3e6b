@@ -1,0 +1,147 @@
+.github/scripts/shape-check.sh
+  s_04445ac7cc91de::t_28a5d7921682f8 1-142
+.github/workflows/build.yml
+  s_04445ac7cc91de::t_21068b59db86a9 1-22
+.gitignore
+  s_04445ac7cc91de::t_1cecc3009cecb6 1-9
+LICENSE
+  s_04445ac7cc91de::t_2ec726b31395b3 1-21
+README.md
+  s_04445ac7cc91de::t_7844558b5fa02b 1-164
+db/README.md
+  s_04445ac7cc91de::t_56d9d9293c2b67 1-73
+db/ddl/oracle-schema.sql
+  s_04445ac7cc91de::t_0d0ac3d4416938 1-713
+db/packages/PKG_CLAIMS.pkb
+  s_04445ac7cc91de::t_e8e25f4655f257 1-500
+db/packages/PKG_CLAIMS.pks
+  s_04445ac7cc91de::t_a817ebff163a55 1-50
+db/seed/reference-data.sql
+  s_04445ac7cc91de::t_4c7ee1cc425a39 1-305
+db/triggers/TRG_CLAIM_AUDIT.trg
+  s_04445ac7cc91de::t_303d20da26d357 1-39
+pom.xml
+  s_04445ac7cc91de::t_7249c51659d47e 1-105
+src/main/java/com/claimscore/dao/AuditLogDAO.java
+  s_04445ac7cc91de::t_efc21e7d3728aa 1-71
+src/main/java/com/claimscore/dao/ClaimDAO.java
+  s_04445ac7cc91de::t_1e167bdd0faf47 1-34
+src/main/java/com/claimscore/dao/ClaimDAOImpl.java
+  s_04445ac7cc91de::t_07851d8803cb30 1-303
+src/main/java/com/claimscore/dao/ClaimLineDAO.java
+  s_04445ac7cc91de::t_fd571f1011b293 1-122
+src/main/java/com/claimscore/dao/LookupDAO.java
+  s_04445ac7cc91de::t_fd7478176283bf 1-83
+src/main/java/com/claimscore/dao/PolicyHolderDAO.java
+  s_04445ac7cc91de::t_b2ee2bb27ed9bb 1-24
+src/main/java/com/claimscore/dao/PolicyHolderDAOImpl.java
+  s_04445ac7cc91de::t_e18c9993d9c9d7 1-169
+src/main/java/com/claimscore/dao/ProviderDAO.java
+  s_04445ac7cc91de::t_4cd1400f0ecd2a 1-100
+src/main/java/com/claimscore/dto/AddressDTO.java
+  s_9f4f0766485894::t_0662e87e4acf2d 1-100
+src/main/java/com/claimscore/dto/AdjudicationResultDTO.java
+  s_9f4f0766485894::t_fce33450c9a593 1-105
+src/main/java/com/claimscore/dto/ClaimDTO.java
+  s_9f4f0766485894::t_a5c02653bd6dbb 1-260
+src/main/java/com/claimscore/dto/ClaimLineDTO.java
+  s_9f4f0766485894::t_3e1393ed5a78bf 1-128
+src/main/java/com/claimscore/dto/PolicyHolderDTO.java
+  s_9f4f0766485894::t_7f49c7bf59498a 1-144
+src/main/java/com/claimscore/dto/ProviderDTO.java
+  s_9f4f0766485894::t_bf13a305c829e6 1-128
+src/main/java/com/claimscore/ejb/AdjudicationService.java
+  s_04445ac7cc91de::t_4a074441ddbada 1-22
+src/main/java/com/claimscore/ejb/AdjudicationServiceBean.java
+  s_04445ac7cc91de::t_e9ab581e6f0742 1-120
+src/main/java/com/claimscore/ejb/AdjudicationServiceHome.java
+  s_04445ac7cc91de::t_a08f4f938af437 1-17
+src/main/java/com/claimscore/ejb/ClaimService.java
+  s_04445ac7cc91de::t_e6574caba3b5f3 1-31
+src/main/java/com/claimscore/ejb/ClaimServiceBean.java
+  s_04445ac7cc91de::t_2bbc2469959026 1-148
+src/main/java/com/claimscore/ejb/ClaimServiceException.java
+  s_04445ac7cc91de::t_94c038f65a57e4 1-33
+src/main/java/com/claimscore/ejb/PolicyHolderService.java
+  s_04445ac7cc91de::t_296f79d7357c26 1-23
+src/main/java/com/claimscore/ejb/PolicyHolderServiceBean.java
+  s_04445ac7cc91de::t_39093a1b977134 1-75
+src/main/java/com/claimscore/struts/ClaimAction.java
+  s_04445ac7cc91de::t_79ab29b6168abe 1-119
+src/main/java/com/claimscore/struts/ClaimForm.java
+  s_04445ac7cc91de::t_1dd962469c938b 1-228
+src/main/java/com/claimscore/struts/ClaimSearchAction.java
+  s_04445ac7cc91de::t_6be8bc326bc9fb 1-88
+src/main/java/com/claimscore/struts/LoginAction.java
+  s_04445ac7cc91de::t_8a0013fcb3182e 1-129
+src/main/java/com/claimscore/struts/PolicyHolderAction.java
+  s_04445ac7cc91de::t_44707b963335a5 1-73
+src/main/java/com/claimscore/util/ClaimStatus.java
+  s_04445ac7cc91de::t_078c694e1d850c 1-57
+src/main/java/com/claimscore/util/Constants.java
+  s_04445ac7cc91de::t_2d161bf53b613f 1-31
+src/main/java/com/claimscore/util/DateUtil.java
+  s_04445ac7cc91de::t_a3cade49f64503 1-91
+src/main/java/com/claimscore/util/MoneyUtil.java
+  s_04445ac7cc91de::t_7a645ce5590309 1-65
+src/main/java/com/claimscore/util/OracleConnectionFactory.java
+  s_04445ac7cc91de::t_9147d91f1045ae 1-78
+src/main/resources/META-INF/ejb-jar.xml
+  s_04445ac7cc91de::t_51d804ddc636f7 1-42
+src/main/resources/META-INF/weblogic-ejb-jar.xml
+  s_04445ac7cc91de::t_9dc8005e588e9b 1-26
+src/main/resources/com/claimscore/ApplicationResources.properties
+  s_04445ac7cc91de::t_5a8df92fb6919b 1-109
+src/main/resources/log4j.properties
+  s_04445ac7cc91de::t_f450b1f0b64559 1-23
+src/main/webapp/WEB-INF/jsp/claim/search.jsp
+  s_04445ac7cc91de::t_3a22d75c286389 1-72
+src/main/webapp/WEB-INF/jsp/claim/submit.jsp
+  s_04445ac7cc91de::t_c7301539b6feb3 1-65
+src/main/webapp/WEB-INF/jsp/claim/view.jsp
+  s_04445ac7cc91de::t_1f159d2f275769 1-82
+src/main/webapp/WEB-INF/jsp/error.jsp
+  s_04445ac7cc91de::t_81d78b5a028cb0 1-47
+src/main/webapp/WEB-INF/jsp/login.jsp
+  s_04445ac7cc91de::t_4f44635d280e01 1-44
+src/main/webapp/WEB-INF/jsp/policyholder/view.jsp
+  s_04445ac7cc91de::t_8ca94618a596ec 1-67
+src/main/webapp/WEB-INF/struts-config.xml
+  s_04445ac7cc91de::t_bbe8ea2c087cb1 1-55
+src/main/webapp/WEB-INF/web.xml
+  s_04445ac7cc91de::t_b1c64660117373 1-70
+src/main/webapp/WEB-INF/weblogic.xml
+  s_04445ac7cc91de::t_d7f93015a82baf 1-25
+src/main/webapp/index.jsp
+  s_04445ac7cc91de::t_7edec48eabe805 1
+src/test/java/com/claimscore/util/ClaimStatusTest.java
+  s_04445ac7cc91de::t_25e8036f702394 1-61
+src/test/java/com/claimscore/util/DateUtilTest.java
+  s_04445ac7cc91de::t_e43f991cc73978 1-103
+src/test/java/com/claimscore/util/MoneyUtilTest.java
+  s_04445ac7cc91de::t_76313cb7e21da5 1-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "5485dc6640233ea6949dfb6a207a321770eb3e6b",
+  "prompts": {},
+  "sessions": {
+    "s_04445ac7cc91de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "36df19ce-14db-4888-8bd6-daef52af26a1",
+        "model": "unknown"
+      },
+      "human_author": "rrajesh1979 <rrajesh1979@gmail.com>"
+    },
+    "s_9f4f0766485894": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "bbdcc2e5-15c7-43b8-8260-a67ff29e73df",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "rrajesh1979 <rrajesh1979@gmail.com>"
+    }
+  }
+}
