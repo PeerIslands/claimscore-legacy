@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: weblogic-ejb-jar.xml,v 1.5 2012/05/29 08:15:32 dvasquez Exp $ -->
+<weblogic-ejb-jar xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.0/weblogic-ejb-jar.xsd">
+
+    <weblogic-enterprise-bean>
+        <ejb-name>AdjudicationService</ejb-name>
+        <stateless-session-descriptor>
+            <pool>
+                <max-beans-in-free-pool>20</max-beans-in-free-pool>
+                <initial-beans-in-free-pool>2</initial-beans-in-free-pool>
+            </pool>
+        </stateless-session-descriptor>
+        <!-- TODO INC-3902: tune trans-timeout once the nightly batch stops timing out -->
+        <transaction-descriptor>
+            <trans-timeout-seconds>120</trans-timeout-seconds>
+        </transaction-descriptor>
+        <resource-description>
+            <res-ref-name>jdbc/ClaimsCoreDS</res-ref-name>
+            <jndi-name>jdbc.ClaimsCoreDS</jndi-name>
+        </resource-description>
+        <jndi-name>ejb/AdjudicationServiceHome</jndi-name>
+    </weblogic-enterprise-bean>
+
+</weblogic-ejb-jar>

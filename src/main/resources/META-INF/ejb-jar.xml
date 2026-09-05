@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  $Id: ejb-jar.xml,v 1.7 2012/05/29 08:15:32 dvasquez Exp $
+  Only the EJB 2.x AdjudicationService is declared here; ClaimService and
+  PolicyHolderService are EJB 3.0 annotated beans (CR-2013-088).
+-->
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+         version="3.0">
+
+    <display-name>ClaimsCore EJBs</display-name>
+
+    <enterprise-beans>
+        <session>
+            <description>Adjudicates, reopens and voids claims via PKG_CLAIMS</description>
+            <ejb-name>AdjudicationService</ejb-name>
+            <home>com.claimscore.ejb.AdjudicationServiceHome</home>
+            <remote>com.claimscore.ejb.AdjudicationService</remote>
+            <ejb-class>com.claimscore.ejb.AdjudicationServiceBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <resource-ref>
+                <res-ref-name>jdbc/ClaimsCoreDS</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+                <res-sharing-scope>Shareable</res-sharing-scope>
+            </resource-ref>
+        </session>
+    </enterprise-beans>
+
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>AdjudicationService</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+
+</ejb-jar>

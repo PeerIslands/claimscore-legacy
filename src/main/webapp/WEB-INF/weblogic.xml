@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: weblogic.xml,v 1.4 2009/02/11 11:07:58 mokafor Exp $ -->
+<weblogic-web-app xmlns="http://xmlns.oracle.com/weblogic/weblogic-web-app"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd">
+
+    <context-root>/claimscore</context-root>
+
+    <resource-description>
+        <res-ref-name>jdbc/ClaimsCoreDS</res-ref-name>
+        <jndi-name>jdbc.ClaimsCoreDS</jndi-name>
+    </resource-description>
+
+    <session-descriptor>
+        <timeout-secs>1800</timeout-secs>
+        <cookie-name>CLAIMSCORESESSIONID</cookie-name>
+        <cookie-http-only>false</cookie-http-only>
+    </session-descriptor>
+
+    <jsp-descriptor>
+        <keepgenerated>true</keepgenerated>
+        <page-check-seconds>-1</page-check-seconds>
+    </jsp-descriptor>
+
+</weblogic-web-app>

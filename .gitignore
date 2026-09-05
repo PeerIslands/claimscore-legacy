@@ -1,0 +1,9 @@
+target/
+aidlc-out/
+*.class
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+.DS_Store

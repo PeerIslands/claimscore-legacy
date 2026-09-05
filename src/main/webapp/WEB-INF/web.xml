@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: web.xml,v 1.9 2011/08/17 09:42:03 mokafor Exp $ -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>ClaimsCore</display-name>
+    <description>ClaimsCore 2.7 - claims adjudication for Larkspur Mutual Health Plan</description>
+
+    <servlet>
+        <servlet-name>ActionServlet</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ActionServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/jsp/error.jsp</location>
+    </error-page>
+
+    <resource-ref>
+        <description>ClaimsCore Oracle data source (CLMPRD)</description>
+        <res-ref-name>jdbc/ClaimsCoreDS</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+
+    <ejb-local-ref>
+        <ejb-ref-name>ejb/ClaimService</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.claimscore.ejb.ClaimService</local>
+        <ejb-link>ClaimService</ejb-link>
+    </ejb-local-ref>
+
+    <ejb-local-ref>
+        <ejb-ref-name>ejb/PolicyHolderService</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>com.claimscore.ejb.PolicyHolderService</local>
+        <ejb-link>PolicyHolderService</ejb-link>
+    </ejb-local-ref>
+
+    <!-- FIXME CR-2014-012: still the EJB 2.x remote home; nobody has had time to convert it -->
+    <ejb-ref>
+        <ejb-ref-name>ejb/AdjudicationServiceHome</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <home>com.claimscore.ejb.AdjudicationServiceHome</home>
+        <remote>com.claimscore.ejb.AdjudicationService</remote>
+        <ejb-link>AdjudicationService</ejb-link>
+    </ejb-ref>
+
+</web-app>
