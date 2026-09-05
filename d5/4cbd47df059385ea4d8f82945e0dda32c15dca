@@ -1,0 +1,19 @@
+README.md
+  s_a63170d3728617::t_b1533fb09910ce 160-164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "d54cbd47df059385ea4d8f82945e0dda32c15dca",
+  "prompts": {},
+  "sessions": {
+    "s_a63170d3728617": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_a63170d3728617",
+        "model": "unknown"
+      },
+      "human_author": "rrajesh1979 <rrajesh1979@gmail.com>"
+    }
+  }
+}
