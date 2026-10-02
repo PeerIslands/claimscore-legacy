@@ -1,0 +1,44 @@
+# AIDLC run artifacts
+aidlc-out/
+aidlc/
+code-insights/
+
+# Legacy source (read-only reference - not part of generated project)
+src/
+db/
+sidecar.log
+seed.md
+run-input.json
+flow.json
+
+# Maven build artifacts
+claimscore-modern/target/
+target/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# AIDLC skills (not part of generated project)
+.claude/skills/code-insights/
+.claude/skills/specs/
+.claude/skills/design/
+.claude/skills/plan/
+.claude/skills/coder/
+.claude/skills/visualize/
+.claude/skills/modernization/
+.claude/skills/using-protean/
+.claude/skills/tdd/
+.claude/skills/finishing/
+.claude/skills/impl-subagent/
+.claude/skills/impl-inline/
+.claude/skills/worktrees/
+.claude/skills/test-audit/
+.claude/skills/brainstorm/
+.claude/skills/estimate/
+.claude/skills/greenfield/
+.claude/skills/brownfield/
+.claude/skills/integration/
+.claude/skills/triage/
+.claude/skills/fast-track-coder/

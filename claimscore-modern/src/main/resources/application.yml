@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: claimscore
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/claimscore}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${JWT_ISSUER_URI:http://localhost:8080/auth/realms/claimscore}
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+logging:
+  pattern:
+    console: '{"timestamp":"%d{ISO8601}","level":"%p","logger":"%c","message":"%m","correlationId":"%X{correlationId}"}%n'

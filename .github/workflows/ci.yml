@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  gates:
+    name: Wave-0 Gates
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: claimscore-modern
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+
+      - name: Start MongoDB (Testcontainers uses Docker; also provide a real instance for smoke test)
+        run: |
+          docker run -d --name mongo -p 27017:27017 mongo:7
+          sleep 3
+
+      - name: typeSafety — mvn compile -Werror
+        run: mvn compile -Werror -B
+
+      - name: unitTests — smoke test
+        run: mvn test -Dtest="**/*Test.java" -DfailIfNoTests=false -B
+
+      - name: buildPackage — mvn package -DskipTests
+        run: mvn package -DskipTests -B
+
+      - name: staticAnalysis — mvn checkstyle:check
+        run: mvn checkstyle:check -B
+
+      - name: formatting — mvn spotless:check
+        run: mvn spotless:check -B
+
+      - name: dependencyIntegrity — mvn dependency:analyze
+        run: mvn dependency:analyze -DfailOnWarning=true -B
