@@ -9,6 +9,14 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: ${JWT_ISSUER_URI:http://localhost:8080/auth/realms/claimscore}
+
+security:
+  jwt:
+    # Base64-encoded HMAC-SHA256 secret — override via JWT_SECRET env var in production.
+    secret: ${JWT_SECRET:dGVzdC1zZWNyZXQta2V5LXRoYXQtaXMtbG9uZy1lbm91Z2g=}
+    expiry-seconds: ${JWT_EXPIRY_SECONDS:3600}
+  lockout:
+    maxAttempts: ${LOCKOUT_MAX_ATTEMPTS:5}
 server:
   port: 8080
 management:
