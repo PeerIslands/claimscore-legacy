@@ -4,12 +4,12 @@ aidlc/
 code-insights/
 
 # Legacy source (read-only reference - not part of generated project)
-src/
-db/
-sidecar.log
-seed.md
-run-input.json
-flow.json
+/src/
+/db/
+/sidecar.log
+/seed.md
+/run-input.json
+/flow.json
 
 # Maven build artifacts
 claimscore-modern/target/
