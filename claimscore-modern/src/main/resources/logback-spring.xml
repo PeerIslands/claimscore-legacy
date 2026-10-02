@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ClaimsCore Modern — Logback configuration (Spring Boot profile-aware).
+
+  Structured JSON logging to stdout with:
+    - correlationId from MDC (populated by CorrelationIdFilter)
+    - PII masking: SSN patterns (\d{3}-\d{2}-\d{4}) replaced with [MASKED] (PI-009)
+    - INFO level for com.claimscore, WARN for everything else
+-->
+<configuration>
+
+  <!-- Register the PII-masking converter under the conversion word "maskedMsg" -->
+  <conversionRule
+      conversionWord="maskedMsg"
+      converterClass="com.claimscore.observability.PiiMaskingConverter"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!--
+        JSON structured log line.
+        Fields:
+          timestamp   — ISO-8601 instant
+          level       — log level
+          logger      — logger name (class)
+          thread      — thread name
+          correlationId — from MDC (empty string when not set)
+          message     — PII-masked formatted message
+      -->
+      <pattern>{"timestamp":"%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}","level":"%p","logger":"%c","thread":"%t","correlationId":"%X{correlationId:-}","message":"%maskedMsg"}%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Application code: INFO and above -->
+  <logger name="com.claimscore" level="INFO" additivity="false">
+    <appender-ref ref="STDOUT"/>
+  </logger>
+
+  <!-- Everything else: WARN and above -->
+  <root level="WARN">
+    <appender-ref ref="STDOUT"/>
+  </root>
+
+</configuration>
